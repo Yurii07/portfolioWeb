@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet"> -->
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="libs/bootstrap-4.0.0-dist/css/bootstrap.min.css"/>
+  <!-- FullPage CSS -->
+  <link rel="stylesheet" href="libs/fullPage.js-master/jquery.fullPage.css"/>
+  <link rel="stylesheet" href="libs/fullPage.js-master/examples/examples.css"/>
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="libs/slick-master/slick/slick.css"/>
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="libs/slick-master/slick/slick-theme.css"/>
+  <!-- portfolio plugin -->
+  <!-- <link rel="stylesheet" href="libs/jquery-elastic-grid-master/css/"> -->
+<link rel="stylesheet" href="libs/jquery-elastic-grid-master/css/elastic_grid.min.css">
+
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/main.css"/>
+  <!-- Animate CSS -->
+  <link rel="stylesheet" href="css/animate.css"/>
+
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>-->
+  <title>DS</title>
+  <style>
+  .slider img {
+    width: 40%;
+
+/*  чб 
+-webkit-filter: grayscale(1); 
+        filter: gray; 
+        filter: grayscale(1);*/
+      }
+      .intro p {
+        font-size: 1rem;
+        letter-spacing: -0.46999999999999975px;
+        color: #565656;
+        /*text-align: left;*/
+      }
+      .slick-slide img {
+       max-width: 100px; 
+       margin: 0 auto;
+     }
+     span.small-title {
+      font-size: 2rem;
+      color: #a9acb5;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: -.35px;
+      margin-bottom: 26px;
+        /* centerntext
+        display: block;
+        text-align: center;*/
+      }
+      .counter-bg {
+     /*  box-shadow : 0 2px 0 #2BACE2,
+       0 4px 0 #EB0D8C,
+       0 6px 0 #FCEE23,
+       0 8px 0 #000000;
+       margin: 0 1px;*/
+
+
+     }
+
+     #header {
+      padding: 0;
+      /*z-index: 10000;*/
+      transition: all 0.2s ease-in-out;
+      height: auto;
+      background-color:transparent;  
+    }
+
+    #header.activated {
+      background: #fff;
+      -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+      -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+      z-index: 999999;
+    }
+    .nav-item a:hover {
+     /*color: red;*/
+   }
+ /*  .fp-viewing {
+    display: none;
+    }*/
+    .section{
+      /*height: auto !important;*/
+    }
+    .lang {
+      position: absolute;
+    right: -13px;
+    top: 15px;
+}
+    .og-grid {
+   /*   display: block;
+      width: 50%;
+      text-align: center;*/
+    }
+
+  </style>
+</head>
+<body>
+
+
+  <header id="header">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-md-12"> 
+
+          <nav class="navbar navbar-expand-md " id="nav" data-state="closed">
+
+           <span class="navbar-toggler-icon">
+
+             <a class="navbar-brand" href="#">
+              <img src="images/logo-shylov.svg" width="50" class="d-inline-block align-top" alt="DS">
+            </a>
+
+          </span>
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span> 
+          </button>
+
+          <div class="collapse navbar-collapse " id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 w-100 d-flex justify-content-between row">
+              <li class="nav-item active col-md-2">
+                <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item col-md-2">
+                <a class="nav-link " href="#">Услуги</a>
+              </li>
+              <li class="nav-item col-md-2">
+                <a class="nav-link" href="#">Портфолио</a>
+              </li>
+              <li class="nav-item col-md-2">
+                <a class="nav-link" href="#">О нас</a>
+              </li>
+              <li class="nav-item col-md-2">
+                <a class="nav-link" href="#">Blog</a>
+              </li>
+              <li class="nav-item col-md-2">
+                <a class="nav-link" href="#">Контакты</a>
+              </li>
+      <!--               <li class="nav-link" href="#">
+                      <select class="selectpicker" data-width="fit">
+        <option data-content='<span class="flag-icon flag-icon-us"></span> Russian'>Ru</option>
+        <option  data-content='<span class="flag-icon flag-icon-mx"></span> English'>En</option>
+        <option  data-content='<span class="flag-icon flag-icon-mx"></span> Ukrainian'>Uk</option>
+      </select>
+    </li> -->
+  </ul>
+  <form class="lang form-inline mt-2 mt-md-0">
+    <select class="selectpicker" data-width="fit">
+      <option data-content='<span class="flag-icon flag-icon-us"></span> Russian'>Ru</option>
+      <option  data-content='<span class="flag-icon flag-icon-mx"></span> English'>En</option>
+      <option  data-content='<span class="flag-icon flag-icon-mx"></span> Ukrainian'>Uk</option>
+    </select>
+  </form>
+</div>
+</nav>
+
+
+
+</div>
+</div>
+</div>
+</header>
+<!--  -->
+
+<!--  -->
+<main >
+
+
+  <div class="container-fluid">
+    <div class="row main-content">
+      <div class="col-md-2 lines"> 
+        <div class="vertical-lines0" >
+
+            <!-- <div class="logo">
+              <a href="https://dssh.com.ua/" class="navbar-brand" rel="home" itemprop="url"><img src="images/logo/logo-shylov.svg" class="custom-logo" alt="Design Studio" itemprop="logo" width="50px" style="z-index: 9;"></a>
+            </div> -->
+            
+          </div>
+          <div class="vertical-lines1" id="line-center"></div>
+          <div class="vertical-lines2" id="line-center"></div>
+          <div class="vertical-lines3" id="line-center"></div>
+
+          <div class="vertical-lines4" id="line-center"></div>
+          <div class="vertical-lines5" id="line-center"></div>
+          <div class="vertical-lines6" id="line-center"></div>
+        </div>
+        <div class="sidebar-left">
+          <div class="side-content">
+            <a href="https://www.facebook.com/ds.by.shylov/"> Facebook </a>
+            <a href="https://www.instagram.com/ds_by_shylov/"> Instagram </a>
+          </div>
+        </div>
+
+        <div class="col-md-12 ">
+          <div id="elastic_grid_demo" style="padding-top: 7%;"></div>
+        </div>
+
+            <div class="sidebar-right">
+              <!-- <select class="selectpicker" data-width="fit">
+                <option data-content='<span class="flag-icon flag-icon-us"></span> Russian'>Ru</option>
+                <option  data-content='<span class="flag-icon flag-icon-mx"></span> English'>En</option>
+                <option  data-content='<span class="flag-icon flag-icon-mx"></span> Ukrainian'>Uk</option>
+              </select> -->
+              <div class="side-content">
+                <p class="copyright">
+                © 2017 Studio DS design</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+      </main>
+
+
+  <footer></footer>
+
+
+
+<!-- <script src="libs/jquery-3.3.1.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+  <script src="libs/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+  <!-- FullPage js -->
+  <script src="libs/fullPage.js-master/jquery.fullPage.js"></script>
+  <script src="libs/fullPage.js-master/examples/examples.js"></script>
+  <script>
+
+    $(document).ready(function() {
+
+      $('#fullpage').fullpage({
+        anchors: ['firstPage', 'secondPage', '3rdPage'],
+        // sectionsColor: ['#fff', '#1BBC9B', '#7E8F7C'],
+        menu: '#menu',
+        //equivalent to jQuery `easeOutBack` extracted from http://matthewlein.com/ceaser/
+        // easingcss3: 'cubic-bezier(0.175, 0.885, 0.320, 1.275)',  jump slide
+        // fitToSection: false, turn off autoscrolling to page
+        navigation: false,
+        navigationPosition: 'right',
+        navigationTooltips: ['First page', 'Second page', 'Third and last page'],
+
+        // paddingTop: '3em',
+        responsiveWidth: 768,
+        autoScrolling: false,
+        //events
+        // если нужна анимация только вниз стр. то убрать settimeout
+        onLeave: function(index, nextIndex, direction){
+          let sectionIndex = $('#section'+nextIndex),
+          textContent = sectionIndex.find('.preview-text-content');
+          textContent.removeClass('animated fadeInLeftBig');
+          window.setTimeout(function(){
+            textContent.addClass('animated fadeInLeftBig');
+          },100),
+
+            // numberContent
+            numberContent = sectionIndex.find('.main-title');
+            numberContent.removeClass('animated slideInDown');
+            window.setTimeout(function(){
+              numberContent.addClass('animated slideInDown');
+            },100),
+             // image animation
+             imageContent = sectionIndex.find('.col-md-8 p');
+             imageContent.removeClass('animated fadeInRightBig');
+             window.setTimeout(function(){
+              imageContent.addClass('animated fadeInRightBig');
+            },100);
+           },
+           afterLoad: function(anchorLink, index){},
+           afterRender: function(){},
+           afterResize: function(){},
+           afterResponsive: function(isResponsive){},
+           afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+           onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
+           }
+         });
+    });
+
+
+  </script>
+  <script type="text/javascript" src="libs/slick-master/slick/slick.min.js"></script>
+  <script>
+    $(".slider").slick({
+
+      rows: 3,
+      slidesToShow: 7,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      responsive: [
+
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+
+          rows: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+
+          rows: 1
+
+        }
+      }
+      ]
+    });
+
+    $(".slider-companys").slick({
+      rows: 3,
+      slidesToShow: 8,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      dots: false,
+      adaptiveHeight: true,
+      infinite: true,
+      padding: '50px',
+      responsive: [
+
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          slidesToShow: 3,
+
+          rows: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          slidesToShow: 2,
+          dots: false,
+          rows: 1
+
+        }
+      }
+      ]
+    });
+
+  </script>
+  <script src="libs/spincrement/jquery.spincrement.js"></script>
+  <script>
+    $(window).on("scroll", function(){
+      if($(window).scrollTop() > 680) {
+        $('.spincrement').spincrement({
+from: 0,    // Стартовое число
+ //to: false,   // Итоговое число. Если false, то число будет браться из элемента с классом spincrement, также сюда можно напрямую прописать число. При этом оно может быть, как целым, так и с плавающей запятой
+decimalPlaces: 0,   // Сколько знаков оставлять после запятой
+decimalPoint: '.',  // Разделитель десятичной части числа
+thousandSeparator: ' ',  // Разделитель тыcячных
+duration: 3000, // Продолжительность анимации в миллисекундах
+leeway: 50, // percent of duraion
+easing: 'spincrementEasing',
+fade: true
+});
+      }
+    });
+    // fp-viewing-secondPage
+
+  </script>
+  <script>
+   $(window).on("scroll", function() {
+    if($(window).scrollTop() > 50) {
+      $("#header").addClass("activated");
+    } else {
+        //remove the background property so it comes transparent again (defined in your css)
+        $("#header").removeClass("activated");
+      }
+    });
+
+  </script>
+  <!-- script for portfolio -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+<script src="libs/jquery-elastic-grid-master/js/modernizr.custom.js"></script>
+<script src="libs/jquery-elastic-grid-master/js/classie.js"></script>
+<!--- uncompress-->
+
+<script type="text/javascript" src="libs/jquery-elastic-grid-master/js/jquery.elastislide.js"></script>
+<script type="text/javascript" src="libs/jquery-elastic-grid-master/js/jquery.hoverdir.js"></script>
+<script type="text/javascript" src="libs/jquery-elastic-grid-master/js/elastic_grid.js"></script>
+
+<!-- compress version
+<script type="text/javascript" src="js/elastic_grid.min.js"></script>
+-->
+<script type="text/javascript">
+    $(function(){
+        $("#elastic_grid_demo").elastic_grid({
+            'showAllText' : 'All',
+            'filterEffect': 'popup', // moveup, scaleup, fallperspective, fly, flip, helix , popup
+            'hoverDirection': true,
+            'hoverDelay': 0,
+            'hoverInverse': false,
+            'expandingSpeed': 500,
+            'expandingHeight': 500,
+            'items' :
+            [
+                {
+                    'title'         : 'Azuki bean',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.',
+                    'thumbnail'     : ['images/small/1.jpg', 'images/small/2.jpg', 'images/small/3.jpg', 'images/small/10.jpg', 'images/small/11.jpg'],
+                    'large'         : ['https://youtu.be/-6Xl9tBWt54', 'images/large/2.jpg', 'images/large/3.jpg', 'images/large/10.jpg', 'images/large/11.jpg'],
+                    'img_title'     : ['jquery elastic grid 1 ', 'jquery elastic grid 2', 'jquery elastic grid 3', 'jquery elastic grid 4', 'jquery elastic grid 5'],
+                    'button_list'   :
+                    [
+                        { 'title':'Demo', 'url' : 'http://porfolio.bonchen.net/', 'new_window' : true },
+                        { 'title':'Download', 'url':'http://porfolio.bonchen.net/', 'new_window' : false}
+                    ],
+                    'tags'          : ['Self Portrait']
+                },
+                {
+                    'title'         : 'Swiss chard pumpkin',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.',
+                    'thumbnail'     : ['images/small/4.jpg', 'images/small/5.jpg', 'images/small/6.jpg', 'images/small/7.jpg'],
+                    'large'         : ['images/large/4.jpg', 'images/large/5.jpg', 'images/large/6.jpg', 'images/large/7.jpg'],
+                    'img_title'     : ['jquery elastic grid 6 ', 'jquery elastic grid 7 ', 'jquery elastic grid 8', 'jquery elastic grid 9', 'jquery elastic grid 9'],
+                    'button_list'   :
+                    [
+                        { 'title':'Demo', 'url' : 'http://porfolio.bonchen.net/', 'new_window' : true },
+                        { 'title':'Download', 'url':'http://porfolio.bonchen.net/', 'new_window' : true}
+                    ],
+                    'tags'          : ['Landscape']
+                },
+                {
+                    'title'         : 'Spinach winter purslane',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.',
+                    'thumbnail'     : ['images/small/15.jpg','images/small/8.jpg', 'images/small/9.jpg', 'images/small/10.jpg'],
+                    'large'         : ['images/large/15.jpg','images/large/8.jpg', 'images/large/9.jpg', 'images/large/10.jpg'],
+                    'img_title'     : ['jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid'],
+                    'button_list'   :
+                    [
+                        { 'title':'Demo', 'url' : 'http://porfolio.bonchen.net/', 'new_window' : true },
+                        { 'title':'Download', 'url':'http://porfolio.bonchen.net/', 'new_window' : true}
+                    ],
+                    'tags'          : ['Self Portrait', 'Landscape']
+                },
+                {
+                    'title'         : 'Aubergine napa cabbage',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.',
+                    'thumbnail'     : ['images/small/12.jpg', 'images/small/13.jpg', 'images/small/14.jpg', 'images/small/15.jpg', 'images/small/16.jpg'],
+                    'large'         : ['images/large/12.jpg', 'images/large/13.jpg', 'images/large/14.jpg', 'images/large/15.jpg', 'images/large/16.jpg'],
+                    'img_title'     : ['jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid'],
+                    'button_list'   :
+                    [
+                        { 'title':'Demo', 'url' : 'http://porfolio.bonchen.net/', 'new_window' : true },
+                        { 'title':'Download', 'url':'http://porfolio.bonchen.net/', 'new_window' : true}
+                    ],
+                    'tags'          : ['Portrait']
+                },
+                {
+                    'title'         : 'Swiss chard pumpkin',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.',
+                    'thumbnail'     : ['images/small/17.jpg', 'images/small/18.jpg', 'images/small/19.jpg', 'images/small/20.jpg'],
+                    'large'         : ['images/large/17.jpg', 'images/large/18.jpg', 'images/large/19.jpg', 'images/large/20.jpg'],
+                    'img_title'     : ['jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid'],
+                    'button_list'   :
+                    [
+                        { 'title':'Demo', 'url' : 'http://porfolio.bonchen.net/', 'new_window' : true },
+                        { 'title':'Download', 'url':'http://porfolio.bonchen.net/', 'new_window' : true}
+                    ],
+                    'tags'          : ['Landscape']
+                },
+                {
+                    'title'         : 'Spinach winter purslane',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.',
+                    'thumbnail'     : ['images/small/13.jpg','images/small/15.jpg', 'images/small/11.jpg', 'images/small/10.jpg'],
+                    'large'         : ['images/large/13.jpg','images/large/15.jpg', 'images/large/11.jpg', 'images/large/10.jpg'],
+                    'img_title'     : ['jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid'],
+                    'button_list'   :
+                    [
+                        { 'title':'Demo', 'url' : 'http://porfolio.bonchen.net/', 'new_window' : true },
+                        { 'title':'Download', 'url':'http://porfolio.bonchen.net/', 'new_window' : true}
+                    ],
+                    'tags'          : ['Vintage']
+                },
+                {
+                    'title'         : 'Spinach winter purslane',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.',
+                    'thumbnail'     : ['images/small/7.jpg','images/small/8.jpg', 'images/small/9.jpg', 'images/small/10.jpg'],
+                    'large'         : ['images/large/7.jpg','images/large/8.jpg', 'images/large/9.jpg', 'images/large/10.jpg'],
+                    'img_title'     : ['jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid'],
+                    'button_list'   :
+                    [
+                        { 'title':'Demo', 'url' : 'http://porfolio.bonchen.net/', 'new_window' : true },
+                        { 'title':'Download', 'url':'http://porfolio.bonchen.net/', 'new_window' : true}
+                    ],
+                    'tags'          : ['Portrait']
+                },
+                {
+                    'title'         : 'Azuki bean',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.',
+                    'thumbnail'     : ['images/small/16.jpg', 'images/small/13.jpg', 'images/small/14.jpg', 'images/small/15.jpg', 'images/small/16.jpg'],
+                    'large'         : ['images/large/16.jpg', 'images/large/13.jpg', 'images/large/14.jpg', 'images/large/15.jpg', 'images/large/16.jpg'],
+                    'img_title'     : ['jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid'],
+                    'button_list'   :
+                    [
+                        { 'title':'Demo', 'url' : 'http://porfolio.bonchen.net/', 'new_window' : true },
+                        { 'title':'Download', 'url':'http://porfolio.bonchen.net/', 'new_window' : true}
+                    ],
+                    'tags'          : ['Vintage']
+                },
+                {
+                    'title'         : 'Swiss chard pumpkin',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.',
+                    'thumbnail'     : ['images/small/18.jpg', 'images/small/18.jpg', 'images/small/19.jpg', 'images/small/20.jpg'],
+                    'large'         : ['images/large/18.jpg', 'images/large/18.jpg', 'images/large/19.jpg', 'images/large/20.jpg'],
+                    'img_title'     : ['jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid'],
+                    'button_list'   :
+                    [
+                        { 'title':'Demo', 'url' : 'http://porfolio.bonchen.net/', 'new_window' : true },
+                        { 'title':'Download', 'url':'http://porfolio.bonchen.net/', 'new_window' : true}
+                    ],
+                    'tags'          : ['Landscape']
+                },
+                {
+                    'title'         : 'Winter purslane',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.',
+                    'thumbnail'     : ['images/small/11.jpg','images/small/15.jpg', 'images/small/11.jpg', 'images/small/10.jpg'],
+                    'large'         : ['images/large/11.jpg','images/large/15.jpg', 'images/large/11.jpg', 'images/large/10.jpg'],
+                    'img_title'     : ['jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid'],
+                    'button_list'   :
+                    [
+                        { 'title':'Demo', 'url' : 'http://porfolio.bonchen.net/', 'new_window' : true },
+                        { 'title':'Download', 'url':'http://porfolio.bonchen.net/', 'new_window' : true}
+                    ],
+                    'tags'          : ['Portrait']
+                },
+                {
+                    'title'         : 'Spinach winter purslane',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.',
+                    'thumbnail'     : ['images/small/3.jpg','images/small/15.jpg', 'images/small/11.jpg', 'images/small/10.jpg'],
+                    'large'         : ['images/large/3.jpg','images/large/15.jpg', 'images/large/11.jpg', 'images/large/10.jpg'],
+                    'img_title'     : ['jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid'],
+                    'button_list'   :
+                    [
+                        { 'title':'Demo', 'url' : 'http://porfolio.bonchen.net/', 'new_window' : true },
+                        { 'title':'Download', 'url':'http://porfolio.bonchen.net/', 'new_window' : true}
+                    ],
+                    'tags'          : ['Vintage']
+                },
+                {
+                    'title'         : 'Spinach winter purslane',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.',
+                    'thumbnail'     : ['images/small/5.jpg','images/small/8.jpg', 'images/small/9.jpg', 'images/small/10.jpg'],
+                    'large'         : ['images/large/5.jpg','images/large/8.jpg', 'images/large/9.jpg', 'images/large/10.jpg'],
+                    'img_title'     : ['jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid'],
+                    'button_list'   :
+                    [
+                        { 'title':'Demo', 'url' : 'http://porfolio.bonchen.net/', 'new_window' : true },
+                        { 'title':'Download', 'url':'http://porfolio.bonchen.net/', 'new_window' : true}
+                    ],
+                    'tags'          : ['Portrait', 'Landscape']
+                },
+                {
+                    'title'         : 'Azuki bean',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.',
+                    'thumbnail'     : ['images/small/6.jpg', 'images/small/13.jpg', 'images/small/14.jpg', 'images/small/15.jpg', 'images/small/16.jpg'],
+                    'large'         : ['images/large/6.jpg', 'images/large/13.jpg', 'images/large/14.jpg', 'images/large/15.jpg', 'images/large/16.jpg'],
+                    'img_title'     : ['jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid'],
+                    'button_list'   :
+                    [
+                        { 'title':'Demo', 'url' : 'http://porfolio.bonchen.net/', 'new_window' : true },
+                        { 'title':'Download', 'url':'http://porfolio.bonchen.net/', 'new_window' : true}
+                    ],
+                    'tags'          : ['Vintage']
+                },
+                {
+                    'title'         : 'Swiss chard pumpkin',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.',
+                    'thumbnail'     : ['images/small/8.jpg', 'images/small/18.jpg', 'images/small/19.jpg', 'images/small/20.jpg'],
+                    'large'         : ['images/large/8.jpg', 'images/large/18.jpg', 'images/large/19.jpg', 'images/large/20.jpg'],
+                    'img_title'     : ['jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid'],
+                    'button_list'   :
+                    [
+                        { 'title':'Demo', 'url' : 'http://porfolio.bonchen.net/', 'new_window' : true },
+                        { 'title':'Download', 'url':'http://porfolio.bonchen.net/', 'new_window' : true}
+                    ],
+                    'tags'          : ['Landscape']
+                },
+                {
+                    'title'         : 'Spinach winter purslane',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.',
+                    'thumbnail'     : ['images/small/9.jpg','images/small/15.jpg', 'images/small/11.jpg', 'images/small/10.jpg'],
+                    'large'         : ['images/large/9.jpg','images/large/15.jpg', 'images/large/11.jpg', 'images/large/10.jpg'],
+                    'img_title'     : ['jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid', 'jquery elastic grid'],
+                    'button_list'   :
+                    [
+                        { 'title':'Demo', 'url' : 'http://porfolio.bonchen.net/', 'new_window' : true },
+                        { 'title':'Download', 'url':'http://porfolio.bonchen.net/', 'new_window' : true}
+                    ],
+                    'tags'          : ['Vintage', 'Landscape']
+                }
+            ]
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

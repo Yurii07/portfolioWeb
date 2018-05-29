@@ -1,0 +1,56 @@
+// ---------- GENERAL STYLES ---------- //
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+	font-family: 'Fauna One', serif;
+}
+body, 
+html {
+	height: 100%
+}
+
+
+// ---------- SCROLLING STYLES ---------- //
+
+$panelcount: 5; // set # of panels/sections here
+
+.wrapper{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  perspective: 1000;
+}
+
+.section {
+  & {
+    height: 100%;
+    width: calc( 100% / #{$panelcount} );
+    float: left;
+
+    // aesthetic only ----
+    position: relative;
+    
+    $colors: #F64747, #22A7F0, #F9690E, #9B59B6, #03C9A9;
+    @for $i from 1 through length($colors) {
+      &:nth-child(#{$i}) {
+        background: nth($colors, $i)
+      }
+    }
+  }
+  &s {
+    width: percentage($panelcount);
+    height: 100%;
+  }
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-size: 30px;
+    color: #fff;
+  }
+}
